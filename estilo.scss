@@ -1,29 +1,18 @@
 @import "variables";
+@mixin flexible ($displayContacto, $direction , $align ,) {
+    display       : $displayContacto ;
+    flex-direction: $direction;
+    align-items   : $align;   
+}
 body {
     background-color: rgb(194, 186, 186);
     background-image: url(./fondoblanco.png);
-    margin: 1px;
-    padding: 1px;    
+    margin: 0px;
+    padding: 0px;    
 }
- #promo ol li {
-    
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 24px;  
-    color:#7F1734;
-    border-style:groove;
-    display:grid;
-    grid-template-areas: inherit;
-    grid-template-rows:40px;
-    text-decoration: none;
-    justify-content: center;
-    background-color:rgb(255, 253, 253);
-    border-width: 10px;    
-}
-
-
 .sobrenosotros1 {
     background-color:$colorBgn;
-    height: 95px;
+    height: 105px;
     display: grid;
     grid-template-rows:auto ;
     grid-template-rows:repeat(4, 150px);
@@ -31,7 +20,7 @@ body {
     border-style: groove;
     border-color: 	#7F1734; 
 }
-.sobrenosotros1 ul a:hover {
+.negro ul a:hover {
     color:#7F1734;;
 }
 ul li a {
@@ -42,6 +31,8 @@ ul li a {
     padding: 13px;
     display: grid;
     font-family:$chakrafuente1;
+    justify-content: center;
+    justify-self: center;
 }
 .vino1 {
     width: 33,3%;
@@ -91,43 +82,33 @@ header img {
     height: 100px;
 }
 #carouselExampleControls {
-    
     background-color:$colorBgn;
-    display:flex;
+    display: $displayContacto;
     flex-direction: column;
     align-items: center;
 }
 
 
 .nombre{
-    display: $displayContacto;
-    flex-direction: column;
-    align-items: center;
+    @include flexible (flex , column , center)
+    
 }
 .correoelectronico {
-    display:$displayContacto;
-    flex-direction: column;
-    align-items: center;
+    @include flexible (flex , column , center)
 }
 .telefonoo {
-    display:$displayContacto;
-    flex-direction: column;
-    align-items: center;
+    @include flexible (flex , column , center)
     
 }
 .sombra {
     box-shadow: $colorBoxSh;
 }
 .mensaje {
-    display:$displayContacto;
-    flex-direction: column;
-    align-items: center;
+    @include flexible (flex , column , center)
 }
 
 .btnenviar {
-    display:$displayContacto;
-    flex-direction: column;
-    align-items: center;
+    @include flexible (flex , column , center)
 
 }
 .logocontacto{
@@ -224,26 +205,29 @@ header img {
     font-family: $chakrafuente1;
     font-size: 30px;
 }
-#negro {
+.negro {
     background-color:$colorBgn;
-    height: 95px;
+    height: 110px;
     display: grid;
-    grid-template-rows:auto ;
-    grid-template-rows:repeat(4, 150px) ;
+    grid-template-rows:auto;
     justify-items: center;
     border-style: groove;
-    border-color:	#7F1734;   
+    border-color:	#7F1734;
+    justify-self: center;
+    width: 100%;
 }
-#negro ul li a {
+.negro ul li a {
     background-color:$colorBgn;
     color: rgb(245, 245, 240);
     font-size: 25px;  
     text-decoration: none;
-    padding: 13px;
-    display: grid;   
+    padding: 7px;
+    display: grid;
+    justify-content: center;
+    justify-self: center;
 }
 
-li {
+li  {
     display: inline-block;
 }
 .prohibido-18 {
@@ -264,14 +248,11 @@ li {
     align-items: center;
     font-size: 15px;
 }
-
-
 #bouquet {
     font-family:'Chakra Petch', sans-serif;
     color: white;
     font-size: 30px;
 }
-
  #inst{
     display: inline-block;
     padding: 25px;
@@ -285,14 +266,12 @@ li {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-color: 	#7F1734;
 }
-
-#negro ul a:hover {
+.negro ul a:hover {
     color: #7F1734;;
 }
 #bougit {
     display: flex;
 }
-
 .-menu-vertical:hover {
     position: absolute;
     display: block;
@@ -307,7 +286,6 @@ li {
     grid-template-rows:repeat(5, 40px);
     font-size: 15px;
 }
-
 .letra {
     font-family:$chakrafuente1;
     color:#222;
@@ -323,8 +301,7 @@ li {
     border-style: groove;
     border-color:	#7F1734;
 }
-
-ul a {
+ul a  {
     color: rgb(5, 5, 5);
     font-style:'Nuosu SIL', serif;
     font-size: 31px;
@@ -338,7 +315,7 @@ ul a {
     font-family:Arial, Helvetica, sans-serif;
     text-shadow: #7F1734;
 }
-#elementoid2 {
+.elementoid2 {
     text-align: center;
     font-weight: bold;
     font-size: 50px;
@@ -347,6 +324,10 @@ ul a {
     display: flex;
     justify-content: center;
     flex-direction:column;
+    transition: .5s linear;
+}
+.elementoid2 {
+    transition: .5s linear;
 }
 
 fieldset {
@@ -386,16 +367,6 @@ h1 {
     border-style: groove;
     border-color:	#7F1734;
 }
-.imagentinto {
-    display:flex;
-    justify-content: center;
-}
-.imagentinto img {
-    width: 850px;
-    height: 600px;
-   
-}
-
  .bodega1 {
     font-size: 25px;
     font-family:'Saira Condensed', sans-serif;
@@ -410,10 +381,7 @@ h1 {
     padding: 0;
  }
 .contenedor1 {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    
+    @include flexible (flex , column , center)  
 }
 
 .formulario {
@@ -424,8 +392,6 @@ h1 {
     align-items: center;
     
 }
-
-
 input[type="text"],
 input[type="password"] {
     font-size: 20px;
@@ -434,9 +400,7 @@ input[type="password"] {
     border-radius: 5px;
 }
 .logoacc {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexible (flex , column , center)
 }
 .img-fluidd {
     height: 400px;
@@ -454,7 +418,7 @@ input[type="password"] {
     text-align: center;
     color:rgb(0, 0, 0);
 }
-.button {
+#button {
     border:none;
     width: 100%;
     color:white;
@@ -463,9 +427,7 @@ input[type="password"] {
     padding: 12px 16px;
     border-radius: 5px;
 }
-
-
-.button:hover {
+#button:hover {
     background:#7F1734;
 }
 #p1 { 
@@ -487,7 +449,6 @@ input[type="password"] {
     flex-direction: column;
     align-items: center;
 }
-
 #registro {
     display:flex;
     flex-direction: column;
@@ -509,82 +470,108 @@ input[type="password"] {
     border-color: rgb(231, 231, 231);
     background-color: rgb(255, 255, 255);
 }
-
-.carousel-inner {
-display: flex;
-flex-direction: row;
-justify-content: center;
-background-color: #000000;
-padding-right: 450px;
-}
-.text-muted {
-display: flex;
-justify-content: center;
-font-size: 20px;
-background-color: rgb(171, 219, 171);
-}
+    .carousel-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #000000;
+    padding-right: 450px;
+    }
+    .text-muted {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    background-color: rgb(171, 219, 171);
+    }
   
-.card-title {
-color: #7F1734;
-text-decoration:underline;
-}  
-.card-text1 {
-font-size: 27px;
-}
-#ceco {
-font-size: 22px;
-color:white;
-font-family: "Chakra Petch", sans-serif;
-border-radius: 3px;
-text-decoration: none;
-}
-#ceco:hover {
-background-color:#7F1734;
-}
-#direc {
-font-size: 22px;
-color:white;
-font-family: "Chakra Petch", sans-serif;
-border-radius: 3px;
-text-decoration: none;
-}
-#direc:hover {
-background-color:#7F1734;
-}
-#nro {
-font-size: 22px;
-color:white;
-   
-}
+    .card-title {
+    color: #7F1734;
+    text-decoration:underline;
+    }  
+    .card-text1 {
+    font-size: 27px;
+    }
+    #ceco {
+    font-size: 22px;
+    color:white;
+    font-family: "Chakra Petch", sans-serif;
+    border-radius: 3px;
+    text-decoration: none;
+    }
+    #ceco:hover {
+    background-color:#7F1734;
+    }
+    #direc {
+    font-size: 22px;
+    color:white;
+    font-family: "Chakra Petch", sans-serif;
+    border-radius: 3px;
+    text-decoration: none;
+    }
+    #direc:hover {
+        background-color: #7F1734;
+      }
+    #nro {
+    font-size: 22px;
+    color:white; 
+    }
 
- @media screen and ( min-width: 320) {
+    #bodega1 {
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+}
+    #imageninicio {
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 5px  #000000;
+}
+.instagram {
+    color:white;
+}
+.facebook {
+    color: white;
+}
+ @media screen and ( min-width:240) {
+        #bodega1 {
+        display: grid;
+        justify-content: center;
+        justify-self: center;
+       
+       }
+        #imageninicio {
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px 5px  #000000;
+        }
         .micuenta {
         background-image: url(./Fmaderavino.jpg);
         font-family: 'Saira Condensed', sans-serif;
         margin: 0;
         padding: 0;
         }
-        #promo ol li {
-    
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-size: 24px;  
-        color:#7F1734;
-        border-style:groove;
-        display:grid;
-        grid-template-areas: inherit;
-        grid-template-rows:40px;
-        text-decoration: none;
-        justify-content: center;
-        background-color:rgb(255, 253, 253);
-        border-width: 10px;    
+        .negro {
+        background-color:$colorBgn;
+        height: 110px;
+        display: grid;
+        grid-template-rows:auto;
+        justify-items: center;
+        border-style: groove;
+        border-color:	#7F1734;
+        justify-self: center;
+        width: 100%;
         }
-        #negro ul li a {
+        .negro ul li a  {
         background-color:$colorBgn;
         color: rgb(245, 245, 240);
         font-size: 25px;  
         text-decoration: none;
-        padding: 13px;
-        display: grid;   
+        padding: 8px;
+        display: grid;
+        justify-content: center;
+        justify-self: center;
+        }
+        
+        li  {
+        display: inline-block;
         }
         .viñedo1 {
         font-size: 25px;
@@ -605,34 +592,14 @@ color:white;
         height: 300px;
         padding-left: 800px;
         }
-        #negro ul li a {
-        background-color: #222;
-        color: rgb(245, 245, 240);
-        font-size: 25px;  
-        text-decoration: none;
-        display: inline-block;
-        flex-direction: row;
-        padding: 15px;
-        }
+       
         .header {
         background-color:#222;
         height: 100px;
         display: flex;
         justify-content: center;
         }
-        #imagentinto {
-        max-width: 65%;
-        height: auto;
-        padding-left: 420px; 
-        }
-        #negro {
-        background-color: #222;
-        height: 100px;
-        display: grid;
-        grid-template-rows:auto ;
-        grid-template-rows:repeat(4, 150px) ;
-        justify-items: center;
-        }
+      
         #carouselExampleControls {
         width: 100%;
         max-width: 120em;
@@ -640,37 +607,89 @@ color:white;
         padding-left: 710px;
         padding-right: 710px;
         }
+        .sobrenosotros1 {
+        background-color:$colorBgn;
+        height: 105px;
+        display: grid;
+        grid-template-rows:auto ;
+        grid-template-rows:repeat(4, 150px);
+        justify-items: center;
+        border-style: groove;
+         border-color: 	#7F1734; 
+        }
+        #header3 {
+        background-color:$colorBgn;
+        height: 100px;
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "compraMayorista compraMayorista"
+        "sobreNosotros sobreNosotros"
+        "contacto contacto"
+        "promociones promociones"
+        "footer footer";             
+        color: white;
+        font-family:$chakrafuente1;
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+        }
+        #header4 {
+        background-color:$colorBgn;
+        height: 100px;
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "compraMayorista compraMayorista"
+        "sobreNosotros sobreNosotros"
+        "contacto contacto"
+        "promociones promociones"
+        "footer footer"; 
+        
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: $chakrafuente1;
+        font-size: 30px;
+        }
         }
 
  @media screen and (min-width:1200) {
+        #bodega1 {
+        display: grid;
+        justify-content: center;
+        justify-self: center;
+       
+        }
+        #imageninicio {
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px 5px  #000000;
+        }
         .micuenta {
         background-image: url(./Fmaderavino.jpg);
         font-family: 'Saira Condensed', sans-serif;
         margin: 0;
         padding: 0;
-         }
-        #promo ol li {
-    
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-size: 24px;  
-        color:#7F1734;
-        border-style:groove;
-        display:grid;
-        grid-template-areas: inherit;
-        grid-template-rows:40px;
-        text-decoration: none;
-        justify-content: center;
-        background-color:rgb(255, 253, 253);
-        border-width: 10px;    
+        .negro {
+        background-color:$colorBgn;
+        height: 110px;
+        display: grid;
+        grid-template-rows:auto;
+        justify-items: center;
+        border-style: groove;
+        border-color:	#7F1734;
+        justify-self: center;
+        width: 100%;
         }
-
-         #negro ul li a {
+        .negro ul li a {
         background-color:$colorBgn;
         color: rgb(245, 245, 240);
         font-size: 25px;  
         text-decoration: none;
-        padding: 13px;
-        display: grid;   
+        padding: 7px;
+        display: grid;
+        justify-content: center;
+        justify-self: center;
         }
         .viñedo1 {
         font-size: 25px;
@@ -679,7 +698,7 @@ color:white;
         border-color: rgb(231, 231, 231);
         background-color: rgb(255, 255, 255);
         }
-        #elementoid2 {
+        .elementoid2 {
         text-align: center;
         font-weight: bold;
         font-size: 50px;
@@ -691,15 +710,7 @@ color:white;
         height: 300px;
         padding-left: 800px;
         }
-        #negro ul li a {
-        background-color: #222;
-        color: rgb(245, 245, 240);
-        font-size: 25px;  
-        text-decoration: none;
-        display: inline-block;
-        flex-direction: row;
-        padding: 15px;
-        }
+        
         .header {
         background-color:#222;
         height: 100px;
@@ -711,7 +722,7 @@ color:white;
         height: auto;
         padding-left: 420px; 
         }
-        #negro {
+        .negro {
         background-color: #222;
         height: 100px;
         display: grid;
@@ -726,4 +737,50 @@ color:white;
         padding-left: 710px;
         padding-right: 710px;
         }
+        .sobrenosotros1 {
+        background-color:$colorBgn;
+        height: 105px;
+        display: grid;
+        grid-template-rows:auto ;
+        grid-template-rows:repeat(4, 150px);
+        justify-items: center;
+        border-style: groove;
+        border-color: 	#7F1734; 
         }
+        #header3 {
+        background-color:$colorBgn;
+        height: 100px;
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "compraMayorista compraMayorista"
+        "sobreNosotros sobreNosotros"
+        "contacto contacto"
+        "promociones promociones"
+        "footer footer";             
+        color: white;
+        font-family:$chakrafuente1;
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+        }
+        #header4 {
+        background-color:$colorBgn;
+        height: 100px;
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "compraMayorista compraMayorista"
+        "sobreNosotros sobreNosotros"
+        "contacto contacto"
+        "promociones promociones"
+        "footer footer"; 
+        
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: $chakrafuente1;
+        font-size: 30px;
+        }
+        }
+    }

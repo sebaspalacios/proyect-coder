@@ -2,27 +2,13 @@
 body {
   background-color: rgb(194, 186, 186);
   background-image: url(./fondoblanco.png);
-  margin: 1px;
-  padding: 1px;
-}
-
-#promo ol li {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  font-size: 24px;
-  color: #7F1734;
-  border-style: groove;
-  display: grid;
-  grid-template-areas: inherit;
-  grid-template-rows: 40px;
-  text-decoration: none;
-  justify-content: center;
-  background-color: rgb(255, 253, 253);
-  border-width: 10px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .sobrenosotros1 {
   background-color: #222;
-  height: 95px;
+  height: 105px;
   display: grid;
   grid-template-rows: auto;
   grid-template-rows: repeat(4, 150px);
@@ -31,7 +17,7 @@ body {
   border-color: #7F1734;
 }
 
-.sobrenosotros1 ul a:hover {
+.negro ul a:hover {
   color: #7F1734;
 }
 
@@ -43,6 +29,8 @@ ul li a {
   padding: 13px;
   display: grid;
   font-family: "Chakra Petch", sans-serif;
+  justify-content: center;
+  justify-self: center;
 }
 
 .vino1 {
@@ -222,24 +210,27 @@ header img {
   font-size: 30px;
 }
 
-#negro {
+.negro {
   background-color: #222;
-  height: 95px;
+  height: 110px;
   display: grid;
   grid-template-rows: auto;
-  grid-template-rows: repeat(4, 150px);
   justify-items: center;
   border-style: groove;
   border-color: #7F1734;
+  justify-self: center;
+  width: 100%;
 }
 
-#negro ul li a {
+.negro ul li a {
   background-color: #222;
   color: rgb(245, 245, 240);
   font-size: 25px;
   text-decoration: none;
-  padding: 13px;
+  padding: 7px;
   display: grid;
+  justify-content: center;
+  justify-self: center;
 }
 
 li {
@@ -281,7 +272,7 @@ li {
   border-color: #7F1734;
 }
 
-#negro ul a:hover {
+.negro ul a:hover {
   color: #7F1734;
 }
 
@@ -338,7 +329,7 @@ ul a {
   text-shadow: #7F1734;
 }
 
-#elementoid2 {
+.elementoid2 {
   text-align: center;
   font-weight: bold;
   font-size: 50px;
@@ -347,6 +338,11 @@ ul a {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  transition: 0.5s linear;
+}
+
+.elementoid2 {
+  transition: 0.5s linear;
 }
 
 fieldset {
@@ -392,16 +388,6 @@ h1 {
   font-family: "Chakra Petch", sans-serif;
   border-style: groove;
   border-color: #7F1734;
-}
-
-.imagentinto {
-  display: flex;
-  justify-content: center;
-}
-
-.imagentinto img {
-  width: 850px;
-  height: 600px;
 }
 
 .bodega1 {
@@ -465,7 +451,7 @@ input[type=password] {
   color: rgb(0, 0, 0);
 }
 
-.button {
+#button {
   border: none;
   width: 100%;
   color: white;
@@ -475,7 +461,7 @@ input[type=password] {
   border-radius: 5px;
 }
 
-.button:hover {
+#button:hover {
   background: #7F1734;
 }
 
@@ -577,33 +563,64 @@ input[type=password] {
   color: white;
 }
 
-@media screen and (min-width: 320) {
+#bodega1 {
+  display: grid;
+  justify-content: center;
+  justify-self: center;
+}
+
+#imageninicio {
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px 5px #000000;
+}
+
+.instagram {
+  color: white;
+}
+
+.facebook {
+  color: white;
+}
+
+@media screen and (min-width: 240) {
+  #bodega1 {
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+  }
+  #imageninicio {
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 5px #000000;
+  }
   .micuenta {
     background-image: url(./Fmaderavino.jpg);
     font-family: "Saira Condensed", sans-serif;
     margin: 0;
     padding: 0;
   }
-  #promo ol li {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-    font-size: 24px;
-    color: #7F1734;
-    border-style: groove;
+  .negro {
+    background-color: #222;
+    height: 110px;
     display: grid;
-    grid-template-areas: inherit;
-    grid-template-rows: 40px;
-    text-decoration: none;
-    justify-content: center;
-    background-color: rgb(255, 253, 253);
-    border-width: 10px;
+    grid-template-rows: auto;
+    justify-items: center;
+    border-style: groove;
+    border-color: #7F1734;
+    justify-self: center;
+    width: 100%;
   }
-  #negro ul li a {
+  .negro ul li a {
     background-color: #222;
     color: rgb(245, 245, 240);
     font-size: 25px;
     text-decoration: none;
-    padding: 13px;
+    padding: 8px;
     display: grid;
+    justify-content: center;
+    justify-self: center;
+  }
+  li {
+    display: inline-block;
   }
   .viñedo1 {
     font-size: 25px;
@@ -624,33 +641,11 @@ input[type=password] {
     height: 300px;
     padding-left: 800px;
   }
-  #negro ul li a {
-    background-color: #222;
-    color: rgb(245, 245, 240);
-    font-size: 25px;
-    text-decoration: none;
-    display: inline-block;
-    flex-direction: row;
-    padding: 15px;
-  }
   .header {
     background-color: #222;
     height: 100px;
     display: flex;
     justify-content: center;
-  }
-  #imagentinto {
-    max-width: 65%;
-    height: auto;
-    padding-left: 420px;
-  }
-  #negro {
-    background-color: #222;
-    height: 100px;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-rows: repeat(4, 150px);
-    justify-items: center;
   }
   #carouselExampleControls {
     width: 100%;
@@ -658,76 +653,108 @@ input[type=password] {
     background-color: #222;
     padding-left: 710px;
     padding-right: 710px;
+  }
+  .sobrenosotros1 {
+    background-color: #222;
+    height: 105px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-rows: repeat(4, 150px);
+    justify-items: center;
+    border-style: groove;
+    border-color: #7F1734;
+  }
+  #header3 {
+    background-color: #222;
+    height: 100px;
+    display: grid;
+    grid-template-areas: "header header" "compraMayorista compraMayorista" "sobreNosotros sobreNosotros" "contacto contacto" "promociones promociones" "footer footer";
+    color: white;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  #header4 {
+    background-color: #222;
+    height: 100px;
+    display: grid;
+    grid-template-areas: "header header" "compraMayorista compraMayorista" "sobreNosotros sobreNosotros" "contacto contacto" "promociones promociones" "footer footer";
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 30px;
   }
 }
 @media screen and (min-width: 1200) {
+  #bodega1 {
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+  }
+  #imageninicio {
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 5px #000000;
+  }
   .micuenta {
     background-image: url(./Fmaderavino.jpg);
     font-family: "Saira Condensed", sans-serif;
     margin: 0;
     padding: 0;
   }
-  #promo ol li {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-    font-size: 24px;
-    color: #7F1734;
-    border-style: groove;
+  .micuenta .negro {
+    background-color: #222;
+    height: 110px;
     display: grid;
-    grid-template-areas: inherit;
-    grid-template-rows: 40px;
-    text-decoration: none;
-    justify-content: center;
-    background-color: rgb(255, 253, 253);
-    border-width: 10px;
+    grid-template-rows: auto;
+    justify-items: center;
+    border-style: groove;
+    border-color: #7F1734;
+    justify-self: center;
+    width: 100%;
   }
-  #negro ul li a {
+  .micuenta .negro ul li a {
     background-color: #222;
     color: rgb(245, 245, 240);
     font-size: 25px;
     text-decoration: none;
-    padding: 13px;
+    padding: 7px;
     display: grid;
+    justify-content: center;
+    justify-self: center;
   }
-  .viñedo1 {
+  .micuenta .viñedo1 {
     font-size: 25px;
     font-family: "Saira Condensed", sans-serif;
     border-style: groove;
     border-color: rgb(231, 231, 231);
     background-color: rgb(255, 255, 255);
   }
-  #elementoid2 {
+  .micuenta .elementoid2 {
     text-align: center;
     font-weight: bold;
     font-size: 50px;
     text-shadow: rgb(238, 226, 203);
     font-family: "Italianno", cursive;
   }
-  #bougif {
+  .micuenta #bougif {
     max-width: 65%;
     height: 300px;
     padding-left: 800px;
   }
-  #negro ul li a {
-    background-color: #222;
-    color: rgb(245, 245, 240);
-    font-size: 25px;
-    text-decoration: none;
-    display: inline-block;
-    flex-direction: row;
-    padding: 15px;
-  }
-  .header {
+  .micuenta .header {
     background-color: #222;
     height: 100px;
     display: flex;
     justify-content: center;
   }
-  #imagentinto {
+  .micuenta #imagentinto {
     max-width: 65%;
     height: auto;
     padding-left: 420px;
   }
-  #negro {
+  .micuenta .negro {
     background-color: #222;
     height: 100px;
     display: grid;
@@ -735,11 +762,43 @@ input[type=password] {
     grid-template-rows: repeat(4, 150px);
     justify-items: center;
   }
-  #carouselExampleControls {
+  .micuenta #carouselExampleControls {
     width: 100%;
     max-width: 120em;
     background-color: #222;
     padding-left: 710px;
     padding-right: 710px;
+  }
+  .micuenta .sobrenosotros1 {
+    background-color: #222;
+    height: 105px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-rows: repeat(4, 150px);
+    justify-items: center;
+    border-style: groove;
+    border-color: #7F1734;
+  }
+  .micuenta #header3 {
+    background-color: #222;
+    height: 100px;
+    display: grid;
+    grid-template-areas: "header header" "compraMayorista compraMayorista" "sobreNosotros sobreNosotros" "contacto contacto" "promociones promociones" "footer footer";
+    color: white;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  .micuenta #header4 {
+    background-color: #222;
+    height: 100px;
+    display: grid;
+    grid-template-areas: "header header" "compraMayorista compraMayorista" "sobreNosotros sobreNosotros" "contacto contacto" "promociones promociones" "footer footer";
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 30px;
   }
 }/*# sourceMappingURL=estilo.css.map */
